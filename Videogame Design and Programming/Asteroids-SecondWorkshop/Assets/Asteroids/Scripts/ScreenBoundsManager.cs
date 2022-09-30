@@ -39,7 +39,7 @@ public class ScreenBoundsManager : MonoBehaviour
         if (position.x > _right + _margin)
         {
             //Debug.Log(position.x+"   right + margin = " + (_right + _margin) + ", left - margin = " + (_left - _margin));
-            position.x = _left - _margin + float.Epsilon + 0.1f;   //ftw
+            position.x = _left - _margin;// + float.Epsilon + 0.1f;   //ftw
         }
 
         if (position.x < _left - _margin)

@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9021acb1e3dc1234ca60fa079529073b, type: 3}
   m_Name: Level1
   m_EditorClassIdentifier: 
-  NumberOfLargeAsteroids: 0
+  NumberOfLargeAsteroids: 5
   NumberOfBigSaucer: 0
   NumberOfSmallSaucer: 0
