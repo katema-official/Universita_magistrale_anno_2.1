@@ -5,8 +5,8 @@ using POLIMIGameCollective;
 
 public class AsteroidFieldManager : MonoBehaviour
 {
-
-    [SerializeField] AsteroidController[] _asteroidControllers;
+    [SerializeField] AsteroidController[] _asteroidControllers; //initialized from outside, from the unity editor. These are the AsteroidController components
+                                                                //of the asteroid prefabs you are going to use.
     private float _top;
     private float _bottom;
     private float _left;
@@ -20,9 +20,12 @@ public class AsteroidFieldManager : MonoBehaviour
     [Range(0.25f, 0.75f)]
     [SerializeField] private float _targetAreaRatio = .5f;
 
-    [SerializeField] private AsteroidFieldParameters _asteroidFieldParameters;
+    [SerializeField] private AsteroidFieldParameters _asteroidFieldParameters;  //the parameters we are going to use for this AsteroidFieldManager are saved here!
 
     private float _targetAreaRay;
+    private int _numberOfActiveAsteroids = 0;
+
+    [SerializeField] private GameObject ExplosionParticleEffect;
 
     private void Awake()
     {
@@ -40,10 +43,54 @@ public class AsteroidFieldManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        for(int i = 0; i < 10; i++)
+        
+    }
+
+    public void PlayLevel(AsteroidLevel gameLevel)
+    {
+        for (int i = 0; i < gameLevel.NumberOfLargeAsteroids; i++)
         {
             CreateAsteroid(AsteroidController.Size.Large);
+            
         }
+    }
+
+    private void CreateOneAsteroid(AsteroidController.Size size, Vector3 position)
+    {
+        int asteroidType = (int)(_asteroidControllers.Length * Random.value);
+
+        AsteroidController asteroid = Instantiate(_asteroidControllers[asteroidType], position, Quaternion.identity);
+
+        Vector3 direction = Random.insideUnitCircle.normalized;
+        asteroid.SetDirection(direction);
+        SetUpAsteroid(ref asteroid, size);
+        _numberOfActiveAsteroids += 1;
+    }
+
+    public void AsteroidDestroyed(AsteroidController.Size size, Vector3 position)
+    {
+        Instantiate(ExplosionParticleEffect, position, Quaternion.identity);
+
+        if(size == AsteroidController.Size.Large)
+        {
+            CreateOneAsteroid(AsteroidController.Size.Medium, position);
+            CreateOneAsteroid(AsteroidController.Size.Medium, position);
+        }
+        if (size == AsteroidController.Size.Medium)
+        {
+            CreateOneAsteroid(AsteroidController.Size.Small, position);
+            CreateOneAsteroid(AsteroidController.Size.Small, position);
+        }
+        
+        _numberOfActiveAsteroids -= 1;
+
+        Debug.Log("active asteroids = " + _numberOfActiveAsteroids);
+
+        if(_numberOfActiveAsteroids == 0)
+        {
+            GameManager.Instance.PlayNextLevel();
+        }
+
     }
 
     // Update is called once per frame
@@ -67,14 +114,19 @@ public class AsteroidFieldManager : MonoBehaviour
     private void CreateAsteroid(AsteroidController.Size size)
     {
         Vector3 position = GetStartPosition();
+
         Vector3 target = GetTargetPosition();
 
         Vector3 direction = (target - position).normalized;
+
         int asteroidType = (int) (_asteroidControllers.Length * Random.value);
 
         AsteroidController asteroid = Instantiate(_asteroidControllers[asteroidType], position, Quaternion.identity);
+        
         asteroid.SetDirection(direction);
         SetUpAsteroid(ref asteroid, size);
+
+        _numberOfActiveAsteroids += 1;
 
 
     }
@@ -90,12 +142,12 @@ public class AsteroidFieldManager : MonoBehaviour
                 asteroidController.setScale(_asteroidFieldParameters.LargeAsteroidScale);
             break;
             case AsteroidController.Size.Medium:
-                asteroidController.setSize(AsteroidController.Size.Large);
+                asteroidController.setSize(AsteroidController.Size.Medium);
                 asteroidController.setSpeed(_asteroidFieldParameters.MediumAsteroidSpeed);
                 asteroidController.setScale(_asteroidFieldParameters.MediumAsteroidScale);
             break;
             case AsteroidController.Size.Small:
-                asteroidController.setSize(AsteroidController.Size.Large);
+                asteroidController.setSize(AsteroidController.Size.Small);
                 asteroidController.setSpeed(_asteroidFieldParameters.SmallAsteroidSpeed);
                 asteroidController.setScale(_asteroidFieldParameters.SmallAsteroidScale);
             break;

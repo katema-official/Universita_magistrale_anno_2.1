@@ -63,9 +63,11 @@ public class SpaceShipController : MonoBehaviour
 
 
 
-        if (Input.GetButtonDown("Space"))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            MissileController missile = Instantiate(_missileController, _firingPosition.position, Quaternion.identity);
+            MissileController missile = Instantiate(_missileController, 
+                _firingPosition.position, 
+                _firingPosition.rotation);
         }
     }
 

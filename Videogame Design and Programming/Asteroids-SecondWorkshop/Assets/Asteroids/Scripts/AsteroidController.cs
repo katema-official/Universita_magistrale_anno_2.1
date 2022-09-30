@@ -12,18 +12,22 @@ public class AsteroidController : MonoBehaviour
 
     [SerializeField] private float _speed = 5f;
     [SerializeField] private float _rotationSpeed = 90f;
-    private Size _size = Size.Large;
+    private Size _size;
 
     private Transform _transform;
 
     private Vector3 _direction = Vector3.zero;
     private float _rotationDirection = 0f;
 
+
+    private AsteroidFieldManager _asteroidFieldManager;
+
     // Start is called before the first frame update
     private void Awake()
     {
         _transform = GetComponent<Transform>();
         _direction = Vector3.right;
+        _asteroidFieldManager = GameObject.FindObjectOfType<AsteroidFieldManager>();
     }
 
     private void OnEnable()
@@ -73,5 +77,16 @@ public class AsteroidController : MonoBehaviour
     {
         _transform.position = _transform.position + _speed * Time.fixedDeltaTime * _direction;
         _transform.Rotate(0f, 0f, _rotationSpeed * Time.fixedDeltaTime * _rotationDirection);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Missile"))
+        {
+            Destroy(collision.gameObject);
+            _asteroidFieldManager.AsteroidDestroyed(_size, _transform.position);
+            Destroy(gameObject);
+            
+        }
     }
 }
