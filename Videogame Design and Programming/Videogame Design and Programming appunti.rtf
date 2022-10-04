@@ -1,5 +1,5 @@
 {\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1040\deflangfe1040{\fonttbl{\f0\fswiss\fprq2\fcharset0 Calibri;}{\f1\fnil\fcharset0 Calibri;}}
-{\*\generator Riched20 10.0.22000}{\*\mmathPr\mnaryLim0\mdispDef1\mwrapIndent1440 }\viewkind4\uc1 
+{\*\generator Riched20 10.0.22000}{\*\mmathPr\mdispDef1\mwrapIndent1440 }\viewkind4\uc1 
 \pard\nowidctlpar\sa200\sl276\slmult1\qc\f0\fs40\lang2057 Videogame Design & Programming\par
 
 \pard\nowidctlpar\sa200\sl276\slmult1\fs22 Lezione 1 - 13/09/2022\par
@@ -42,7 +42,7 @@ Game loop: Unity gives us an entry point to that. We have something like callbac
 GETTING ORGANIZED\line The first thing to decide is putting rules. Consistency trumps style. If we have 5 or 50 people working together, the way we write the code is important because other people will read it. Choose a style, and go for it. This is useful for providing conventions. For what? Naming, consistency, maintainability, extensibility\'85 Naming conventions are useful, because they tell us what something represents and tell us what something is. Names should be descriptive and unambiguous. For the Capitalization we have different choices.\line We\rquote ll also use namespaces. They are used for modularity and avoid name collisions. \par
 Collider vs Rigidbody\par
 \f1\lang16{\pict{\*\picprop{\sp{\sn wzDescription}{\sv Image}}{\sp{\sn posv}{\sv 1}}
-}\pngblip\picw17427\pich7543\picwgoal9880\pichgoal4276 
+}\pngblip\picw17427\pich7542\picwgoal9880\pichgoal4276 
 89504e470d0a1a0a0000000d4948445200000498000001fd08060000005655c6fe000000017352
 474200aece1ce90000000467414d410000b18f0bfc6105000000097048597300000ec300000ec3
 01c76fa8640000ffa549444154785eec7d07802445f5fe37796667734eb7bb9773e68e781c3967
@@ -8897,7 +8897,25 @@ Now, Eugenio and Andrea. \line They started working at Reply. They are the devel
 Suggestions:\line Game Design: try to formalize whatever idea you might have into parts that are either game data or mechanics. These are elements that can be given to the development team and turned into gameplay. Game data are tools to use for gameplay mechanics. Each mechanic should be discussed about objective and challenge. If you create a mechanic that has one response from the player, that is not interesting. Also discuss always the ideas with the development team. Some ideas can fit more or less with what has been done before or not. Listen to the developers. And be always open to feedback, watch others play the game and pay attention to the reaction, opinion and feedbacks.\line Game Development: discuss design requirements. If you think about mechanics, discuss of side-cases. "What happens if...?". Reuse and expand existing systems if possible, before implementing new ones. Reusing things is good. Separate data from logic if you can (scriptable objects in Unity). Document the data. Is a distance in meters, centimeters, etc...? Does it have a min or max value? This is important. ALWAYS test the feature before going to somebody else and saying "it's ready". Sometimes, we have to break our own things. Find holes in the implementation before it's too late. \ul\par
 
 \pard\nowidctlpar\sa200\sl276\slmult1\par
-\par
+\ulnone Lezione 4 - 04/10/2022\par
+Another D - Beheaded - Don't Let Look Fall (Andrea Passini) - Harmony in Darkness - Just the two of us - NoClip - Paradox! - Sleep Invasion - Arrow (matteo regge) - Cloud Diver - Cursed Hero of the Past (gustavo santos) - Dark Unknown (capponcelli) - Dream Diary - ...\par
+One designer for each group, one architect for team.\par
+Cenney.nl -> website for free stuff\par
+"It's not tinder"\par
+So, last time, we were walking about how to design games. Zubek tried to formalize the game design. He would say we have to works on Mechanics and systems, Gameplay and Player experience. The developers go in this direction, the players the other way around. \par
+Another way to see game desing is: Aestethics, Mechanics, Story and Technology. \par
+Gibson Bond: proposes the same schema divided in three levels. He was a student of Jessy Shell. They consider also the part of the Communities. A community is sometimes more important than the game itself, like in Minecraft. \par
+We can also divide Formal elements (what makes up the game really) from Dynamic elements (created by dynamics while the game is being played). There is also the Dramatic Elements (Could be the story, narrative, premises, etc..). \line In the Formal Elements, we have rules, objectives... also, objectives and rules equal conflict. \line Acceptance of the rules is the core of the game. An example is golf: the self-imposed goal is to put the ball in the hole. This is easy if you do it with your hand. But you have to do it with  some items and with obstacles. These make up the rules. How the rules are implemented is also important. In musical games, the objects used (guitar for guitar hero) are premises. \line THE OUTCOME MUST NOT BE COMPLETELY DETERMINED. In Mario Kart, you can lose anyway sometimes. \line Concept of "Magic Circle": what happens in the game stays in the game. You betray me in D&D, but you wouldn't betray me in real life.\par
+Player Interaction Patterns: when one drives a car (also in a game), he expects the car to have a reaction whe other things are hit. SOmeitmes, also an artificial interaction is good. An example is this cool racing game we have just seen. \par
+Engaging the Player: the formal elements train the characters, and an element is the interaction with the player. We are talking about tetris: what was its selling point? The fact that it was a russian game "escaped" from a russian laboratory. \par
+[[Robotron]], also [[Vanguard]]\par
+Level of challenge: not created for games, but for "doing stuff", people working. The idea is that there is a balance between player skill and game challenge. Low skill, high challenge = frustration. High skill, low challenge = boredom. \line The goal must be very well defined. Then, we must be given a task perceived as doable. If it's not doable for us, it frustrates us. \line (Pierluca Lanzi likes puzzle games). \par
+Laika 2.0: the speaker of today made this as his first game. He works in an intalian video game company. Alberto Arosio was a student here many years ago. He is a game designer and huge nerd. Laika 2.0 was the first game they made for the course: metroidvania and puzzle. When there was steam greenlight, they used it to publish the game. But not stonks. in the first cuple of months, 53 copies sold. The team disbanded, there was no profit and everyone went to do his thing. But Alberto started doing freelance sending CV everywhere . In 2019, Digital Tales assumed him as Game Designer. What is digital tales?\line A small team of people in Milan. It's a casual workplace and a group of big nerds. There you find co-workers and friends. They do both B2B and B2C games. B2B is what pays the bill, while B2C is what they like to do. B2B is about E-Learning, VR, Advergames and Gamification. B2C are Racing and Adventure games. Advergames are advertisement games. They do them using... it depends. usually Unity, but sometimes WebGL. \par
+Bookbound Brigade: meroidvabia deveoped by them.\par
+Constant battle between developers and management. Developers want to be proud of their game, but such games cost. What does it mean to be a Game Designer? Someone might say "the idea guy". No. The game designer takes the diea and makes it to something that works -> a full fledged games that works and is fun to play. There also is a very wide definition of game design. In a big studio, there can be many different game designers: narrative, content, puzzle, level, feature, system and economy designer. \par
+In small studios, a designer might jump between more projects, while in a big studio the designer is specialized and not focused on a single project. In a small studio, the skills needed are math backgound (especially probability), writing, creativity and curiosity. also other things.\line Math is NECESARY for progression (for difficulty for example), for lootboxes and economy. \line Writing is important because the Game Design Document is the holy bible of the project. The GDD is a technical document that features all that there is for a game: mechanics, features, UI, game story... describes what the game is. In a perfect world, one suffices just a GDD. But actually, the designer strives to be as clear as possible in the document, and discusses with developers to make some things clear. \par
+Most people here in Italy come out from Milestone.\par
+\ul\par
 \par
 \par
 \par
