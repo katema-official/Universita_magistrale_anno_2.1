@@ -107,6 +107,7 @@
     <Compile Include="Assets\Asteroids\Scripts\Utility\ScreenBounds.cs" />
     <Compile Include="Assets\POLIMIGameCollective\Scripts\ScriptableObjects\StringVariable.cs" />
     <Compile Include="Assets\POLIMIGameCollective\Scripts\Utility\Utility.cs" />
+    <Compile Include="Assets\Asteroids\MenuManagement\Scripts\Menus\MainMenu2.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

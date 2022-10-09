@@ -19,6 +19,10 @@ public class GameManager : Singleton<GameManager>
     // Start is called before the first frame update
     void Start()
     {
+    }
+
+    public void StartGame()
+    {
         AsteroidLevel gameLevel = _levelManager.GetLevel();
         _asteroidFieldManager.PlayLevel(gameLevel);
     }

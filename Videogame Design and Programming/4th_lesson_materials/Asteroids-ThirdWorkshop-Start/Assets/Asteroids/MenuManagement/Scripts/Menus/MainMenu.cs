@@ -24,15 +24,23 @@ namespace Asteroids.MenuManagement
         
         public void OnPlayPressed()
         {
-            if (fadeToPlay)
+            /*if (fadeToPlay)
             {
                 StartCoroutine(OnPlayPressedRoutine());
             }
             else
-            {
-                // LevelManager.LoadNextLevel();
-                // GameMenu.Open();
-            }
+            {*/
+                GameManager.Instance.StartGame();
+                GameMenu.Open();
+            
+        }
+
+        private IEnumerator OnPlayPressedRoutide2()
+        {
+            GameMenu.Open();
+            yield return new WaitForSeconds(1f);
+
+            GameManager.Instance.StartGame();
         }
 
         private IEnumerator OnPlayPressedRoutine()
