@@ -51,8 +51,14 @@ Preprocessing -> things to do before b&b to the problem so it is easier to solve
 21 -> this way of expressing the implication (system of two inequalities) allows automatic disaggregation of constraints. \par
 23 -> the variables related in a clique are such that, when one is set to one, the others are set to 0. \par
 \par
-\par
-\par
+Lezione 4 - 10/10/2022\par
+Linear programs with only binary variables.\par
+2 -> it's called additive algorithm since we only require sums and subtractions.\par
+3 -> it's a branch and bound.\par
+4 -> Standard form of this particular problem, not of LP. \par
+7-> If the right-hand side of the i-th constraint is positive for all constraints, then setting all free variables to 0 in this subproblem gives the best solution for S (new upper bound). \par
+9 -> set to 0 the variables with positive coefficients, and to 1 those with negative coefficients. if there is a constraint such that t_i is not "negative enough", that means, it is larger than r_i(S), S is infeasible and the node can be discarded\par
+11 -> all free variables that appear in the constraint can be fixed (they might not be all the free variables).\par
 \par
 \par
 \par
