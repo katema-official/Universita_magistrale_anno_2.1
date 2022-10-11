@@ -1,0 +1,15 @@
+Character 2D controller
+https://www.youtube.com/watch?v=SVACshnciMk
+https://github.com/krthush/2d-unity-movement
+
+Penny Pixel
+https://www.youtube.com/watch?v=wGI2e3Dzk_w
+
+Brackeys
+https://www.youtube.com/watch?v=dwcT-Dch0bA
+https://github.com/Brackeys/2D-Character-Controller
+
+Tarodev
+https://github.com/Matthew-J-Spencer/player-controller
+https://www.youtube.com/watch?v=3sWTzMsmdx8
+https://tarodev.itch.io/player-controller
