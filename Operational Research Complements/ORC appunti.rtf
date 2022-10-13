@@ -60,6 +60,20 @@ Linear programs with only binary variables.\par
 9 -> set to 0 the variables with positive coefficients, and to 1 those with negative coefficients. if there is a constraint such that t_i is not "negative enough", that means, it is larger than r_i(S), S is infeasible and the node can be discarded\par
 11 -> all free variables that appear in the constraint can be fixed (they might not be all the free variables).\par
 \par
+Lezione 5 - 13/10/2022\par
+Polyhedral combinatorics\par
+What can we do with linear relaxation?\par
+2 -> Basic fact: in discrete optimization problems, for a given problem, different constraints might define the same set of feasible solutions. So it makes sense to compare formulations and find the best one. \par
+3 -> We'd like the formulation that gives us the best dual bound, so that we have the best b&b. The best formulation is the one that allows us to solve the MILP problem as if it was a LP problem. \par
+4 -> blue: convex hull of the solutions, the smallest possible polyhedron that contains all the solutions. Its vertex are some integer solutions, and one of them is the best. For most discrete optimization problem, the ideal formulation is not known and difficult to compute. Might also imply a different number of facets (?). \par
+5 -> some terminology. Given a discrete set of integer points x_1, ..., x_t, the convex hull is the set of real points such that each point can be optained as a convex combination of the initial points. Convex combination: we sum all these points, and each of them is multiplied b a suitable coefficient. Sum of coefficients = 1, all are non-negative. We'll use the convex hull definition when the points we use are discrete points that are possible solutions of the discrete optimization problem. The convex hull is contained within the valid formulation. \par
+6 -> POLYHEDRAL COMBINATORICS STUDIES This stuff (sorry for capitals). Some discrete optimization problems, for them, we know the ideal formulation, but at the same time, for them, we don't need the ideal formulation. \par
+7 -> How to select formulations and compare them? A common case is when we have constraints like this. i = index of items, j = index of bin. N = capacity of the bin, y_j = if the bin is used or not. (1) and (2) are different formulations for the same problem. \par
+8 -> Summing the constraints for each item i in formulation (2) gives the first aggregate constraints. So, for each bin, we now have only one constraint. So, constraint (1) is a surrogate formulation of (2). So, (1) is a relaxation of (2). constraitns (2) imply constraints (1), but not the opposite. To demonstrate this, we have to find a point that satisfies (1) but not (2). Each bin is used 1/M of the time (N =100 and M = 5 i.e.). \par
+28 -> There are algorithms that try to restrict the polyhedron. We insert constraints to tighten the polyhedron in the region close to the optimum. \line If we are able to continuously generate cutting points, sooner or later the algorithm will reach the optimal solution. Separation algorithm: the algo that generates new useful inequalities at each iteration. But if the problem (the original one) is difficult, the separation problem also is. This algorithm can be exact or heuristic. The tighter the constraint, the better. There is a fundamental result that states that the separation problem has the same complexity of the original problem.\par
+19 -> we want the algorithm to generate at least a linear inequality such that all the points of the original problem respect the cosntraint, but the optimum of the relaxation (current one) does not. \par
+20 -> cutting planes algorithms.\par
+21 -> Validness and usefulness: both important for the new bounds introduced. Inequality 4 is faced defining: is one of the inequalities that is part of the ideal polyhedron. \par
 \par
 \par
 \par
