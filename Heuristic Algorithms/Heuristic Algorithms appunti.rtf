@@ -53,8 +53,24 @@ lez_04\par
 3 -> There are three definitions for the effectiveness of a heuristic optimization algorithm. f_A(I): value given on instance I by my heuristic algorithm A. I'd like this value to be equal to f*(I), the true optimal value of the instance. \line What if you don't know the optimum? You can construct a lower and upper bound for the optimum. \line (Lower bound = dual bound, upper bound = primal bound). \par
 4 -> Up until now, the reasonings were based on experimental analysis (particualr instances). Let's do a thoeretical analysis. \line For the minimum coloring graph problem, the minimum number of colors you have is either the dimension of (the maximum degree) the max clique in the graph or that value +1. \line The last inequality tells us that what our heuristic finds is always bounded by a function of n.\par
 \par
-\par
-\par
+Lezione 5 - 13/10/2022\par
+We've seen a priori study of heuristic algorithms. In particular, a priori cost and effectiveness. \par
+4\'b0 slide\par
+14 -> Better approx algos but worse time, there is this trade-off in some algorithms. Not all problems can actualy be approximated. \par
+13 -> example: the TSP. Inapproximable = can't prove that your algorithm is alpha times the optimum. \par
+5\'b0 slide\par
+2 -> empirical evaluation of a heuristic algorithm. The thoeretical analysis is complicated, and a precise answer might not be practical. So, we can follow an experimental approach.\par
+3 -> Experimental approach is: bserve the field of your study, then build the model. Then, design experiments to evaluate the model, analyse the results and revise the model based on the results until a satisfactory model. The model could be debunked, in that case you modify it. Or, your experiments prove your system to be correct. \par
+4 -> we want to find indicies of efficiency and effectiveness of an algorithm. Then, use this indices to compare different algorithms. In this way, you conlcude that an algo is better than another one. Maybe my algo is good on small instances but good on greater instances.\par
+5 -> how do we perform experiments? giving a benchmark of instances. Ideally, it is infinite. practically, it's a subset. What subset? It must be representative of the whole set, relating to structural features. The instances should not be too easy or too hard\par
+6 -> the environment influence the result and makes it difficult to reproduce precisely the result. \par
+7 -> we sould describe the cost and quality of our algorithms. The only time in which we can say that we prefer an algorithm over another is when it takes not much time and the quality is good. Otherwise, the time or the result must be similar to compare the other feature. \par
+8 -> statistical model of algorithm performance? We have the domane of instances, and from it we extract a sample set/benchmark. From it, we randomly extract an instance each time we need one. T_A(I) is the computational time that is a random variable. The relative difference delta is also a random variable. \par
+9 -> When i try to compute the relative difference, i usually don't have the optimal value So, we have to estimate delta_A(i). So, we need LOWER BOUND and UPPER BOUND, eccoliiiiiiiiii.\line The lower bound is not greater thatn the optimal, while the upper bound is greater than the optimal. \par
+10 -> We'll see a lot of pictures. Le'ts see the Runtime Distribution Diagram. It's a plot that on x axis gives a time, on y gives how likely it is to solve an instance that takes that time. Bascially: given instance i, and fixed time x, y is the probability that i will be solved in that time. \par
+11 -> Main features: monotone nondecreasing. It's also not continuous. In zero or before 0 the diagram is equal to zero (you need some time to solve the problem). It's also equal to 1 from a certain point on. \par
+13 -> up till now, we assumed that the size was fixed. What happened if we allow time to change? Scaling diagram. x = size of the instance. y = time to solve it. \par
+15 -> The Solution Quality Distribution is a diagram of the relative difference. \par
 \par
 \par
 \par
