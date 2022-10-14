@@ -72,6 +72,38 @@ We've seen a priori study of heuristic algorithms. In particular, a priori cost 
 13 -> up till now, we assumed that the size was fixed. What happened if we allow time to change? Scaling diagram. x = size of the instance. y = time to solve it. \par
 15 -> The Solution Quality Distribution is a diagram of the relative difference. \par
 \par
+Lezione 6 - 14/10/2022\par
+Slide 5\'b0\par
+10 -> it's a probability distribution function. \par
+14 -> number of elementary operation you perform but also time (?). Depends on the computer you do your runs. \par
+15 -> Should we fix the size of the instances or not? Depends. A thing you could do is: consider different sizes, and get profiles of the relative differences. \par
+18 -> parametric diagrams. Let's fix the size of the instances and build, for each of them, the SQD diagram. This might show us a trend. As you increase the size of your problem, your algorithm becomes less precise and more heuristic (this is something that can happen). \par
+19 -> you can use the SQD to compare the performances of different algorithms. Strict dominance: an algorithm is better than another when the relative difference of the first is better than the relative difference of the second on all instances. Strict dominance implies probabilistic dominance. \par
+slide 6\'b0\par
+2 -> Compact statistical descriptions. Mean and Variance depend a lot on outliers, unfortunately. The average is used, the variance is less used.\par
+3 -> The median divides in two the benchmark. Compute minimum, mazimum, median, etc.. might be a question. Usefulness of this diagram? First: we can observe that this diagram is a simplification of the SQD. Till the minimum, the SQD would be 0. from minimum to lower quartile, the SQD goes up to 25%. Then, from it to the median, goes up to 50%, and so on. From the SQD, you can have the box plot, too. We can use box plot to compare algorithms.\par
+4 -> for different algorithms, we don't draw the SQD but the boxplot. The small circles are outliers: they are outside the box. Often happens that an algorithm gets a certain result, but sometimes gets out of the way. Ok mi torna che figoooo. Compare A7 and A8. What is better? A7. Why is it clearly better? because its box is ompletely below the other. This is strict dominance. For probabilistic dominance, we have A2 and A3. It's possible that we don't have strict dominance, but also the contrary is true. Wait, how do we impose probabilistic dominance? That each quarter is better than the previous one. No. Each quartile MUST preceed the corresponing of the other one, ok. But ALSO, it has to preveed the NEXT quartile of the following. \line ok aspetta, ho capito. il secondo del primo deve essere del tutto sotto il primo del secondo.\par
+Il terzo del rpimo deve essere meglio del secondo del secondo.\par
+il quarto del primo deve essere meglio del terzo del secondo, ok, quando questo \'e8 vero, hai probabilistic dominance. Il rpimo \'e8 probabilistic dominant sull'altro.\par
+7 -> Using a randomized algorithm depends on instance, time and seed of the pseudo random number generator. \par
+8 -> You can classify algos in at least three ways.\line 1) Complete/exact algorithms. For every instance, it gives the optimum in finite time. The time depends on the size of the instance. Every instance basically has a time after which we are sure that the algorithm gives us the optimum. \par
+2) Probabilistically approximately complete. Running the instance for a long time gives us the optimum or not? The probability converges to 1 as the time goes to infinity. SOME meteheuristics don't fall in this cathegory. Is this property interesting? \par
+3) Essentially incomplete: finds the optimum for some instances with probability strictly lower that 1 as t goes to infinity. For many other instances, finds the optimum with pro = 1 when t goes to infinity.\par
+9 -> alpha complete algorithm is an approximation algorithm. bla bla bla\par
+11 -> Fix a certain quality. What happens for a certain time?\par
+prendi il grafo di destra, x = 10, y = 30, dotted line: Il 30% delle istanze risolte in maniera ottima vengono risolte in meno di 10 secondi. La linea continua a crescere perch\'e9, se il 30% delle istanze le risolvi in tempo x, le risolvi di sicuro anche in tempo x+c.\par
+13 -> Median = 0.5\par
+14 -> The idea is that we can compare two algorithms, but what if there is no probabilistic dominance?\par
+4 again -> Very small box and large whiskers and viceversa? First, the box is half of the insances (average half). Small box = stable algorithm. \par
+14 -> minimization problem. if the difference is always negative, strict dominance. if sometimes it is, sometimes it is not, no guarantee. \par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
 \par
 \par
 \par
