@@ -75,6 +75,25 @@ What can we do with linear relaxation?\par
 20 -> cutting planes algorithms.\par
 21 -> Validness and usefulness: both important for the new bounds introduced. Inequality 4 is faced defining: is one of the inequalities that is part of the ideal polyhedron. \par
 \par
+Lezione 6 - 17/10/2022\par
+Oggi in italiano, non ci sono studenti internazionali (loooool)\par
+2 -> Dobbiamo aggiungere vincoli per stringere il poliedro. Ci sono tecniche specifiche e generali per vari problemi. Vediamo quelle generali.\line Partiamo da problemi puramente interi, e moi come si estendono ai Misti-Interi.\line Con i puramente interi, partiamo da una solita funzione obiettivo di minimizzazione, variabili intere e vincoli di uguaglianza. Supponiamo anche che i coefficienti di A e b siano interi, non \'e8 fondamentale. Il rilassamento continuo del problema \'e8 lo stesso problema ma con variabili continue. Ora, cerchiamo di traslare i vincoli verso l'interno. Non modifichiamo insomma l'inclinazione del vincolo, cerchiamo solo di modificare il termine noto.\par
+3 -> Terminologia: un iperpiano di supporto \'e8 tale per cui S \'e8 tutto dalla stessa parte, cio\'e8 cinteramente contenuto da uno degli iperspazi dell'iperpiano (d\'e9 io ci ho provato).\line Il vincolo rosso \'e8 un iperpiano di supporto perch\'e9 tiene il poliedro mnella parte valida e tocca un punto del poliedro. \par
+4 -> Consideriamo adesso un insieme di iperpiani di supporto. h^T x = theta \'e8 un iperpiano, e h sono coefficienti interi. Di sicuro, il nostro poliedro \'e8 contenuto nell'intersezione di tutti questi iperpiani di supporto. \line Theta(P) \'e8 linsieme di tutti gli iperpiani di supporto con coefficienti interi a sinistra. Consideriamo ora una restrizione (contrario di rilassamento) di P, chiamato R(P), ovvero un insieme di punti nel continuo tali per cui i vincoli sono soddisfatti, ma in una versione dove la parte destra \'e8 rounded down. Di tutti gli iperpiani ristretti cos\'ec, ne prendiamo l'intersezione. Spostando gli iperpiani verso l'interno, rimane vero che tutti i punti interi del problema sono sempre soddisfatti dai nuovi vincoli. Questo \'e8 conseguenza del fatto che tutti i coefficienti di h sono interi. Questa procedura ha come difetto che, quando spostiamo il vincolo, non ci fermiamo quando troviamo il primo punto intero all'interno dell'insieme, ma ci fermiamo prima, perch\'e9 anche i punti FUORI dal poliedro bloccano questa operazione. Questi infatti sono i piani di Chv\'e0tal. Infatti, fino a questo punto storico, si pensava che questi piani fossero inutili nella pratica.\par
+6 -> Si dimostra che questa restrizione di P \'e8 sempre un poliedro, essendo un'intersezione di iperpiani.\line So we can restrict the restrictions (an english student just arrived looooool). So, we generate new restrictions. Everytime, we generae a new plyhedron that is contained in the preceeding one. If we are lucky, we end up with the convex hull of X. It is proven that this Convex hull can be obtained after a finite number of steps. \line Polytope: poliedro ma chiuso in ogni direzione. Se \'e8 aperto anche solo in una direzione, \'e8 un poliedro ma non un politopo (? lol)\par
+7 -> Gomory proposed a procedure. We take the linear relaxation of our problem and take the optimum. If the optimum is a fractional value, we can generate a new valid inequality. \line Z* can bre written as the sum of a constant term + the contirbution of non basic columns. In fact the non-basic columns give a contribution. N* represent the set of variables that are non basic at optimality. In the \{, we state that there is a matrix where there is a variable, for each row, that has 1 (?). Quello che ho scritto potrebbe essere sbagliato.\par
+8 -> We generate inequalities by rounding. We select a variable which has not an integer value at optimality. That variable is basic in one of the constraints. \par
+9 -> If we choose a good row for generating the gomory cut, we need a finite number of steps to reach the integer optimum.\par
+10 -> WE want to extend this idea to MILP, but there are continuous variables too. We can extend, but is not trivial. \line Consider two valid inequalities, valid for two different polyhedron. Bot of them are of the kind <=. \par
+15 -> f_i0 is between 0 and 1\par
+16 -> k_ij is an integer we select arbitrarily. It remains the same because of the modulo. We can modify the coefficients and still be ok.\par
+17 -> 11/10 perch\'e9 \'e8 come 1/10 + 1\par
+22 -> f(b) is fractional part of b. The two inequalities are not the same. The second one cuts off some fractional solutions.\par
+30 -> generate two SET of valid inequalities (point 2).\par
+32 -> We had to assume that we had integer coefficients to reach the validiy of the Gomory cuts. If that is the case, the results for optimality with Gomory in the MILP cases are valid just as if we were in the ILP case. \par
+\par
+\par
+\par
 \par
 \par
 \par
