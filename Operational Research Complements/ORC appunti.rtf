@@ -92,9 +92,16 @@ Oggi in italiano, non ci sono studenti internazionali (loooool)\par
 30 -> generate two SET of valid inequalities (point 2).\par
 32 -> We had to assume that we had integer coefficients to reach the validiy of the Gomory cuts. If that is the case, the results for optimality with Gomory in the MILP cases are valid just as if we were in the ILP case. \par
 \par
-\par
-\par
-\par
+Lezione 7 - 20/10/2022\par
+Special cutting planes for ILP and MILP\par
+1 -> Cover inequalities for 0-1 programming\line Cover: subset of items such that their total consumption of the capacity is larger than the capacity of the knapsack. It is also minimal iif it does not conain any other cover.\par
+2 -> For each cover, we can associate a valid cover inequality. \par
+5 -> We can obtain valid inequalities for our polyhedron by using a technique called lifting. The cover inequalities are commonly used by MILP solvers to strenghten formulations. It has been proven that minimal covers and lifting allow us to obtain all the non-trivial facets of any 0-1 programming poytope with positive coefficients. \par
+6 -> The excess in the cover (lambda c) is always minimal if it is a minimal cover. \par
+8 -> IMagine a flow network, with nodes receiving flows from arcs and sending flows to other nodes with other arcs. \par
+16 -> full dimensional: we cannot elimitate any variabile, there are no redundant variables.\line Also, all non-trivial facets have positive coefficients. In 2D, this means that if we are maximixing, then the constraints are oriented going in the opposite direction of the objective. \par
+26 -> m, not n, in the last time "n" is reported.\par
+general concept of antiewb inequalities: a possible question at the exam, but not all the details.\par
 \par
 \par
 \par
