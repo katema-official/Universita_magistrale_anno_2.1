@@ -97,6 +97,15 @@ prendi il grafo di destra, x = 10, y = 30, dotted line: Il 30% delle istanze ris
 4 again -> Very small box and large whiskers and viceversa? First, the box is half of the insances (average half). Small box = stable algorithm. \par
 14 -> minimization problem. if the difference is always negative, strict dominance. if sometimes it is, sometimes it is not, no guarantee. \par
 \par
+Lezione 7 - 20/10/2022\par
+Slide 6\par
+16 -> R_i is the rank of instance i (after removing instance 1 because it is useless). Rank is the index of the difference after sording them from the one with the lowes abs diff. to the one with the highest abs diff.. You can also average the ranks of instences of the same value.\par
+\par
+Slide 7\par
+1 -> Constructive algorithms. Sometimes they are exact, but when? We'll see. And if they are not exact? We'll see how to modify them to try to make them exact.\par
+2 -> A C.O. problem is a problem that has as solutions subsets of the ground set. We can start fron an empty subset as initial solution. If we have a proof that some elements of the G.S. must be in the best solution possible, we put them there immediately.\line This algorithm stops when a termination condition holds.\line Some elements of the GS are acceptable, other are not. i.e: knapsack. If the resitual capacity is not enough, I cannot add it to my partial solution. So I have a subset of acceptable elements, so I select some of them. \par
+3 -> The construction graph is given by certain nodes and arcs (it's a directed graph). Nodes are subsets of 2^B (collection of all subsets). The arc set is the collection of all paris feasible solution, feasible solution united with i... The idea is: a node is something i can have during the execution of the algorithm, an arc is a move I can do to change my solution. It's a graph where I can't go back to an old solution once I abandoned it. \par
+4 -> when do we stop the algorithm? When the current node (subset) has no arcs going out. It's as saying: whatever I add to the subset, brings me to a infeasible subset. Often, only the last subset is the only feasible solution. There are also cases in which we can get in and out of the feasible solutions subset by adding elements. \par
 \par
 \par
 \par
