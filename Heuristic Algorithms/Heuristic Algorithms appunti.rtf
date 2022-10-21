@@ -107,6 +107,23 @@ Slide 7\par
 3 -> The construction graph is given by certain nodes and arcs (it's a directed graph). Nodes are subsets of 2^B (collection of all subsets). The arc set is the collection of all paris feasible solution, feasible solution united with i... The idea is: a node is something i can have during the execution of the algorithm, an arc is a move I can do to change my solution. It's a graph where I can't go back to an old solution once I abandoned it. \par
 4 -> when do we stop the algorithm? When the current node (subset) has no arcs going out. It's as saying: whatever I add to the subset, brings me to a infeasible subset. Often, only the last subset is the only feasible solution. There are also cases in which we can get in and out of the feasible solutions subset by adding elements. \par
 \par
+Lezione 8 - 21/10/2022\par
+21 -> Characterization in the additive case. Assuming additive objective function and the solutions being bases (maximal subsets, can also be considered "interesting solutions"), we can conclude some things. A constructive/greedy algorithm finds always a optimal solution iif B,F is a matroid embedding. For us, it's just useful to understand that the problem is solved under these assumptions. \line Most heuristics try to satisfy these properties (greedoids and matroids or ...)\par
+22 -> Given pair (Ground set, Search space), we have a greedoid if three axioms are respected:\line -trivial axiom: empty set belongs to seatch space.\line -accessibility axiom: if a subset is acceptable and not empty, then there is an element that we can remove from the set and still find an acceptable elements. Basically it tells you that you can get in any element of the search space with this constructive algorithm.\line -exchange axiom: you have two asceptable subsets and one of them has cardinality of the other + 1. Then at least one of the elements of x - y should be added to y and get an admissible solution. (for example, this doesn't work for the knapsack 0-1, but it does for the fractional knapsack). A corollary to this: all bases have the same cardinality.\line Prim respects this\par
+23 -> Small complication (now we have a matroid). Keep the first and third axiom, and change (but strenghten) the second one. Instead of accessibility, we want hereditarity. If we have a subset, then every subset of it is an acceptable subset. The knapsack problem, for example, respects this. \line Kruskal respects this.\par
+25 -> Kruskal is a matroid. But why Prim works then? Because has a strong exchange axiom. Satisfies the trivial and accessibility axiom. The problem of Prim is hereditariety. It is compensated by strong exchange axiom. (Strong exchange axiom: not asked in exam).\par
+Slide 8\par
+2 -> when we can't find a good search space, we can change the selection criterium. Why don't we have a good search space in the kp problem? because of capacity constraints. So, we have solutions made of few objects and others made of many items. \line The greedy version is sometimes good, sometimes very bad, but by just changing the selection criterium we can have a 2-approximated algorithm.\par
+3 -> possible exam exercise. To solve the problem, instead of maximizing the value, let's compute the solution with a given criterium. \par
+6 -> TSP: first axiom and accessibility works. For exchanges? no, see slides of previous lesson (slide 7). \par
+7 -> We start an empty path and try to find a hamiltonian cycle. We have the Nearest neighbour heuristic.\par
+9 -> 48  states of US (we were in 1949).\par
+14 -> a_i(x). how many NEW rows do i cover? (because that's the important thing)\par
+16 -> It can be proved that  the algorithm is log_n(numer of rows) approximated.\par
+17 -> This proof won't be asked.\par
+18 -> Same thing. The algorithm is natural.\par
+20 -> The objective function that measures the bins used is extremely flat. \par
+23 - Consider the volumes from the one with highest volume to the one with lowe volume.\par
 \par
 \par
 \par
