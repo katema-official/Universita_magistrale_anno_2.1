@@ -125,7 +125,18 @@ Slide 8\par
 20 -> The objective function that measures the bins used is extremely flat. \par
 23 - Consider the volumes from the one with highest volume to the one with lowe volume.\par
 \par
-\par
+Lezione 9 - 27/10/2022\par
+Slide 9\par
+2 -> Extensions to constructive algorithms. Instead of adding just one element, we add more (in one step). Or, we can add but also remove elements from the current solution. But this allows to come back to old solutions, which is inadmissible in constructive heuristics. \par
+4 -> Is it a CO problem? (of course it is, but try to characterize it!)\line We MUST span all red vertexes, but we can include in the solution also black vertexes. \line Ground sets? For example, edges. Search space? Well, we can explore the search space following the ideas of Kruskal and Prim. But this gives problems.\par
+5 -> So we can use the Distance heuristic. We basically use the Shortest Path for finding ways to connect the special vertexes.\par
+9 -> epsilon is just a really small number, very close to 0. \par
+10 -> Now, let's see second way of extending constructive heuristics.\par
+19 -> Now, Nearest Insertion heuristic. We first choose the node, than the arc. \par
+25 -> Now, Furthest Insertion heuristic. Similar to choosing the biggest item in bin packing. \par
+33 -> Concept of regret: the idea is that we take a decision now, and it can affect badly future decisions. CMST: capacitated minimum spanning tree problem. The root is given. \par
+35 -> Take a vertex and put it in the subtree (what we are doing).\par
+36 -> Roll-out heuristics. \par
 \par
 \par
 \par
