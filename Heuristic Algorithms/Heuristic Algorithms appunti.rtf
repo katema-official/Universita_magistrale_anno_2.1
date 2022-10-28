@@ -138,6 +138,11 @@ Slide 9\par
 35 -> Take a vertex and put it in the subtree (what we are doing).\par
 36 -> Roll-out heuristics. \par
 \par
+Lezione 10 - 28/10/2022\par
+The roll-out heuristic is, for us, not considered a meta-heuristic, since it doesn't have randomization nor memory. \par
+39 -> Destructive heuristics. Instead of starting from empty set, we start with the overall set. Starting from x, remove a certain element i from it, depending on what is the best one to remove. We don't remove an element when it gets us outside from the search space.\par
+40 -> Tipically a destructive herustic takes longer than a constructive heuristic. Also, the test for adding is easier than the test for removing (feasibility test).\par
+41 -> For the SCP, some heuristics give a redundant solution. If constructive heuristics give a redundant solution, it could be better to use a constructive-destructive heuristic. Build a solution, but then apply a destructive heuristic from that solution. This is different from a normal destructive herustic because we don't have all the elements of the Ground Set here, but just those of the solution found. \par
 \par
 \par
 \par
