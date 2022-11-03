@@ -127,7 +127,16 @@ Slides successive\par
 14 -> delta(i) is the set of edges incident to node i. \par
 15 -> delta(S) = edges with ONE endpoint in S and the OTHER ONE outside S.\line E(S) = edges with both endpoints in S. \line They are two complementary definitions: one uses cuts, one uses cycles. \line In real formulation, you either use (2) or (3), but you have to generate an exponential number of constraints (one for each S possible set).\par
 \par
-\par
+Lezione 10 - 03/11/2022\par
+Let's go on with the TSP and ATSP\par
+17 -> No subtour elimination constraints.\par
+18 -> We start with a negative result. The constraints seen are not enough to fully describe the TSP polyhedron. The fractional solution that can be found is not acceptable (is fractional), but satisfies all the constraints. \par
+19 -> 2-matching inequality. Feasible for all integer solution, but not for fractional solutions.\par
+21 -> Comb (pettine) inequalities. \par
+22 -> Some variables might appear twice.\par
+24 -> With all this study, we can solve a lot of complex problems of the TSP in very small time. \par
+27 -> delta(S)\\T = all the arcs going out of S BUT the red ones. Polynomial time separation is possible in some cases.\par
+31 -> It is possible to transform a ATSP into a TSP, but with the cost that we need thrice the nodes.\par
 \par
 \par
 }
