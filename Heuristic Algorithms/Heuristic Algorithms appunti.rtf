@@ -153,8 +153,23 @@ There is not just one path from empty set to optial solution, but there might be
 26 -> j at the denominator, not i.\par
 27 -> the same.cd kn\tab\par
 \par
-\par
-\par
+Lezione 13 -> 07/11/2022\par
+Lagrangian relaxation. Before, we saw linear relaxation and its consequences.\par
+2 -> We'll use LR in a branch and bound algorithm. \par
+3 -> negative -> the solution complies the contraint. Positive -> the constraint is violated (for the red b - Ax). The LR says: take the obj function. If a constraint is violated, its solution is penalized. Otherwise, it is rewarded. \par
+5 -> You have an equality constraint? you can turn them into inequality constraints. \line Ax >= b => -Ax <= -b, and lambda = lambda' - lambda^2 (?)\par
+9 -> pink line = slope of obj function.\line Imagine that the red constraint doesn't allow us to solve easily the problem. But if we remove it, it is easier. IMAGINE, ok? It's to show the geometric meaning of the relaxation. \par
+10 -> max Z_lr is the lower (so upper in this case) bound, we want it as small as possible. So, we need lambda as small as possible. Extreme cases: 0 and +inf. With a value in the middle, we can change the slope of the obj function. It's like taking the convex combination of two objectives. In this PARTICULAR example, the optimal solution of the relaxation is the same as the one of the original problem, something that usually doesn't happen.\par
+7 -> Lagrangean dual problem: what is the best value for lambda? (We assume that here the problem is started from a minimization problem, which is the opposite wrt the problem we saw earlier). Z* ld is the best possible dual bound (here maximum lower bound we can get from lagrangean relaxation. In the example before, the best lower bound was the lowes upper bound). \par
+8 ->With LR, we can't say that the optimum of LR is also the optimal for P. To be optimal, we require both feasibility and complementarity. Complementary is implied by feasibility, if we had equality constraints (???).\par
+11 -> fix lambda\par
+13 -> fix x. We have an exponential number of lines. This is a linear programming problem with an exponential number of constraints. Can we use simplex? No, the input is too large. one constraint for each feasible solution of the og problem. From an algorithmic viewpoint, we need different methods.\par
+14 -> 1/9 here is the best value for lambda. In x*, the value fo the upper bound is the value of the lagrangean relazation function computed in aaa (x* is a value between the two extreme points). In x*, the violation is 0. \par
+Covexification: when we can solvea subproble of the original problem by convexifiyng its feasible region. \par
+In general, the optimal value of the lagrangean dual is the max of the original function subkject to the relax constraint and the constraints defining the convex hull of the problem. With lagrangean relaxation, we are convexifying something yes and something not.\par
+15 -> how good is LR?\line we have positive and negative results. The LR is between the best case and linear relaxation.\ul\par
+\ulnone 17 -> The middle is "Lagrangead dual" (i think), while the one on the right is "Linear Problem".\par
+6 -> He's talking about this slide (Observations)\par
 \par
 \par
 \par
