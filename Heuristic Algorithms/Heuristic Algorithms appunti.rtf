@@ -165,6 +165,31 @@ Lezione 13 - 10/11/2022\par
 11 -> What makes a neighbourhood good or bad? Here are some properties:\line 1) the neighbourhood should allow to reach the global optimum. We can have a graph weakly connected to the optimum or strongly connected to the optimum. \par
 17 -> SQD: what is the probability of being at a certain distance from the global optimum?\par
 \par
+Lezione 14 - 11/11/2022\par
+22 -> the denominator is the sample variance. It describes the variations, wince we compute, for each step, how far we are from the average, we square so to enhance big values and have only positive things, and average with the number of elements we have collected. But this depends on the unit of measure. The numerator, on the other hand, it's another thing. It's basically ana verage of the product in the part that is most above. \par
+24 -> The presence of plateaus can be terrible for the steepest descent. \par
+25 -> Attraction basin. You start from a solution and move deterministically (we don't have randomness right now) until the local optimum is reached. \par
+\line slides 14\par
+2 -> The complexity is given by how many iterations are necessary before finding a local optimum. We could find out, a posteriori, that the complexity is somewhat related to the dimension of the problem, or the number of elements of the search space. Optimizing in a small neighbourhood takes usually less time than exploring in all the search space. This takes, usually, a polinomial time. So, we have two strategies to explore the negihbourhood:\par
+3 -> evaluate all the neighbour solutions. The complexity of this sort of exhaustive search is dependant on the number of neighbour solutions. \par
+4 -> I take a solution. Given the extended neighbourhood i can generate with a flip, hamming distance, swap, or whatever, check the value of the objective function. Then I take the optimum. The complexity depends on the number of subsets visited, the time to evaluate their feasibility and the time to evaluate the objective for a feasible solution. We assume that the time required to generate the neighbours is constant, so not important for us. \par
+5 -> To compute in a fast way f(x') for the neighbours, we can, instead of computing it from scratch, try to start from the f(x) of the initial solution given, and then add7subtract something, or anyway perfomr  a constant time operation. One thing to note is that, if the function is additive, the cost depends only on the object to remove and the object to add. \par
+7 -> They commented the red trick and their algorithm required one day. Decommenting it, it took 1 second. \par
+10 -> What happens if we sxchange the tasks connected by the... "can't remember what i was thinking when i made this picture". \par
+13 -> the last two parts of the red formula are a sequence of costs. \par
+15 -> Branch: subtree appended to the root. Subtree: a general subtree (this is a terminology note). \par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
 \par
 \par
 La scatola a destra ti interessa solo quando il suo x0 \'e8 <= di x0 + xlen della scatola dietro.\line In questo caso, ti interessa (della scatola a destra) sia il suo z che il suo y.\par
