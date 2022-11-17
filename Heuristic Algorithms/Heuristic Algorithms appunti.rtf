@@ -179,9 +179,21 @@ Lezione 14 - 11/11/2022\par
 13 -> the last two parts of the red formula are a sequence of costs. \par
 15 -> Branch: subtree appended to the root. Subtree: a general subtree (this is a terminology note). \par
 \par
+Lezione 15 - 17/11/2022\par
+16 (the number is the one on the right bottom) -> sometimes we don't need to exhaustively explore all the neighbours.\par
+17 -> All part of the solution that don't change iteration after iteration can be stored and stored somewhere. \par
+18 -> when solutions are partitions (BPP, CMSP, Vehicle Routing Problem), we have that some exchanges from different solutions give the same results. This is a way to explore quickly but exhaustively the neighbourhood.\par
+15\'b0 slide\par
+2 -> A larger neighbourhood gives a bigger attraction basin, and the steepest descent becomes effective even though the exploration time is longer. Let us consider a larger neighbourhood (exponential or a high polynomial, not more than 4th power usually), but explore it in a pow-order polynomial time. To do so, we can select a neighbourhood that we can explore efficiently with an exhaustive algorithm, or explore it algorithmically. \par
+3 -> we would like a large k when we need to find a better solution because it is difficult to find it. Otherwise, we are ok with a small k. \par
+5 -> Performing the red swap and then the blue swap or the opposite is the same. Those specific swaps are compatible (the order doesn't matter). \par
+6 -> The idea is that we take mutually independent possible moves and compose them. \line Rows: parts of the solution. Colums: elementary moves. We want a set of columns with the maximum effect (variation of objective function, and must be negative since the problem is of minimization) and being a packing (we don't want two moves to affect the same part of the solution). Problem? The Set Packing Probelm iw NP-hard usually. \par
+7 -> Once again, we have an auxiliary problem and a set of moves. But this time, we have a sort of sequence of moves. Suppose that the solution is made of objects divided in components. \line Problem with transfers: sometimes they are infeasible. In the BPP, sometimes we cannot move anything froma  container to another one. And this is bad for an exchange heuristic. In those cases, we say: we don't do just one transfer, but two (a swap). But why can't I do a swap with three elements?\par
+8 -> Here, nodes are single elements of a solution. Arcs correspond to transferring an element from its component to another component. (i,j) means i take element i and put it to the component where there is k. Also, I take away j. But we can't do that. To still be feasible, we have to say that j goes somewhere else, and so on. This will become feasible when we go back to the original node, i. \line It's not always to move i to the component of j, so we can only consider the arcs that produce feasible solutions. The cost of an arc is the difference between the new cost of the component and its old value. \par
+10 -> So, we are searching for a minimum cost circuit. And this problem is NP-hard. If we have the constaint that we can visit each component only once, then we can have a efficient dynamic programming algorithm that grows partial paths. The final result must be negative. if at a certain point in time we reach a node and we have a positive cost, there is a mathematical property that says that the positive terms can be thrown away. not l but k on the sum over... at the end of the slide.\par
+12 -> Cyclic exchanges mantain the same cardinality in all the components, so we are bound in a part of the feasible region X. Can we do something else? Yes, we can do noncyclic exchange chains. \par
 \par
-\par
-\par
+Lezione 16 - 17/11/2022\par
 \par
 \par
 \par
