@@ -201,8 +201,12 @@ Does all of this make sense? If the results are extremely better (in the TSP for
 Simplest neighbourhood for the MDP? Swaps. They have hamming distance equal to 2. \par
 \par
 \par
-\par
-\par
+Lezione 17 - 24/11/2022\par
+3 -> To get to the local optimum, we can have different execution times in different runs. So it's important to fix the termination condition to a maximum amount of time or maximum number of repetitions of the basic scheme. \par
+4 -> Sometimes, the new starting solution is just a modification of the best solution found by the last execution of the algorithm. \par
+9 -> the two following methods are actually the same method, according to the Professor.\line Start with the usual steepest descent You get a local optimum and save it. This is the basic exchange heuristic. From this local optimum, we apply a perturbation. We apply the SteepestDescent to it to get a new solution. If it is better than x*, we update x* with this, and repeat from there. Else, we repeat from the last local optimum.\par
+11 -> Problems: what if I go back always to the same solution? \par
+18 -> Here the neighbourhood varies. \par
 \par
 \par
 \par
