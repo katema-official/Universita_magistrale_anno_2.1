@@ -229,6 +229,17 @@ We keep neighbourhood, starting solution and function. But we change the idea of
 4 -> Better states have low energy, worse states have high energy. We want to go to the lowest possible state (not always possible). So, states can transition from one to another. How do we transition? Well, Metropoli's algorithm, that simulates this physical thing, assumes that: states are solutions. Energy is the objective function. Base state is the globally optimal solution(s). State transitions are local search moves. Temperature is a numerical parameter. This can be used both for continuous and discrete optimization problems. \par
 7.7.6 -> l'aggiornamento deli valori di scent non \'e8 corretto, e inoltre, se cambiamo la formula di aggiornamento perch\'e9 questo \'e8 un problema di massimo, perch\'e9 non abbiamo fatto lo stesso col precedente, che era un MCP?\par
 \par
+Lezione 19 - 01/12/2022\par
+10 -> At first we need to move a lot, so the temperature should be high. But, at the same idea, not too high, or we could visit very bad solutions. \par
+11 -> In theory, what guarantees conergence is: fix a certain number of iterations. After those iterations, the temperature can be reduced. \par
+12 -> Tabu search\par
+13 -> We have to generate a subset, see if it's feasible, see if it's good, and evaluate the tabu status. Did we already visit that solution? If it's new, I visit it. Otherwise, i discard it. \par
+14 -> Effieiency is the first problem. Comparing a solution with the list of already seen solutions requires time O(t), if the current step is t. We can use more efficient data structures of course. But still, we occupy a lot of space, like, A LOT. So, tipically, we don't do this. BUT, the best MDP algorithm is a Tabu search with a hash table that remembers the already visited solutions. \par
+15 -> The problem of this mechanism is that, if we forbid solutions, at a certain point we could get a search graph that is disconnected. Forbidding a solution => make some nodes disappear from the graph. If the graph is disconnected, we can't reach all the solutions (and among the ones we can't reach, there could be the optimum). Also, forbidding solutions can make it costly to get out of a basin of attraction. \par
+16 -> A very degenare example. Is a toy problem but it makes the idea clear.\par
+19 -> Attribute-based tabu. We forbid all solutions that share an attributed with the visited ones. \par
+20 -> Tabu tenure: after a certain number of iterations, some tabu are dropped. This allows to go back to already visited solutions. But this is necessary if we don't want to cut the search space!\par
+\par
 \par
 \par
 \par
