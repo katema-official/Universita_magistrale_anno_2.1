@@ -244,9 +244,17 @@ Lezione 20 -> 02/12/2022\par
 VNS and Tabu Search. This is a laboratory lesson.\line We want to solve the MDP. \line x(0) is given by a constructive heuristic. \line We have to stop steepest ascent after a certain number of iterations (truncates Steepest Ascent). \par
 FWER - FamilyWise Error Rate\par
 \par
-\par
-\par
-\par
+Lezione 21 - 15/12/2022\par
+Recombination Heuristics (there is no distinction here between heuristic and metaheuristic)\par
+2 -> Here, we don't manage just one solution at a time. We manage more at the same time.\par
+4 -> Scatter Search (the one that proposed Tabu Search). Generate a starting population of solutions, and improve all of them with an exchange procedure. Now we have some very good solution. From this set, we want to build a reference set R = B  United  D, where:\line -B includes the ebst known solutions\line -D includes the "farthest" solutions (from B and each other). These solutions are very fare away from each other and from the best ones. In this case the distance is defined as distance between a single solution and a set of solutions. \par
+Now, consider sistematically each pair of solutions (x,y) such that the first one is one of the best and the second is either a best solution or a distant solution. Now, recombine z and y, obtaining z. This z must IMMEDIATELY be improved obtaining z' applying an exchange heuristic. If this z' doesn't belong to B and B contains a worse soution, replace (the worst solution currently in B) with z'. We also do NOT want duplicates in the reference set. If z' is not so good, it can also be good for me if it is much diverse. So, if z' is not in D and D includes a cloaser solution, i replace the closest solution with z'. Still, we don't want duplicates in the reference set.\par
+This is a "heuristic", because it's deterministic: stop when R is unchanged. To make it meta, we can make the choose of new solutions to put in R stochastic. \par
+6 -> How do we recombine two solutions?\line If two solutions are subsets, we can combine them in some way. First of all: if an element is present in both sets, we add it to the new solution z. At this point, the next elements are chosen at random OR using a constructive procedure (that starts from the intersection of the solutions x and y) that can add elements of the ground set only belonging to x \\ z and y \\ z. Random means "more diversified" (usually), greedy/constructive means "more intensified" (usually). \par
+9 -> Path Relinkng: proposed by Glover, used as a final intensification procedure more than as a stand-alone method. \par
+10 -> "Che \'e8 'sta roba?". \par
+11 -> What parameters control diversification and intenstification? In scatter search it depends on how many solutions there are in B and D. More solutions in B -> Intensify, more solutions in D -> Diversify. In Path Relinking, there is no parameter. Actually, the parameter is the number of solutions, but that's not so good to explain this.\par
+12 -> Variants on Path Relinking regarding how you build a path. (This part is the opposite in the Video Recordings). Forward. go from worst to best, because in this way you can intensify. Backward the opposite. Back-and-Forward: both things (the Proefssor likes this more). Mixed: I have x and y, and I make a path that goes from x to z_0 (solution closest to y), then we move from y to z_0 and I get z_1. From z_0 I try to reach z_1 and I get z_2 and so on. At the end, i get the final path. In general, these different ways to build a path give different paths. External (I jumped the truncated, sorry): I didn't understand. \par
 \par
 \par
 \par
